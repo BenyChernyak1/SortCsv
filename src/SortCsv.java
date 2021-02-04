@@ -16,6 +16,8 @@ public class SortCsv {
         int maxLinesNumber = 5;
 
         try {
+            Files.createDirectories(Paths.get(outputPath));
+
             String header = Files.lines(Paths.get(path))
                     .limit(1)
                     .collect(Collectors.toList()).get(0);

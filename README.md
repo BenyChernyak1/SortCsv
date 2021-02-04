@@ -14,6 +14,9 @@ Sorts efficiently the csv file based on one of its columns
 
 	c. max number of lines in memory
 
+## Importent
+Please set up a a *scr* folder as a **Sources Root folde** and *resources* folder as a **Resources Root folder**
+
 ## How to run
 * Put any .csv file into the *resources* folder or use the pre-defined data.csv file
 * Run the application
@@ -24,6 +27,3 @@ You can change the following in *configuration.properties* file in *resourse* fo
 * The path for the initial CSV file
 * Column number to perform the sort operation
 * Maximum number of lines in memory
-
-## Importent
-Please set up a a *scr* folder as a **Sources Root folde** and *resources* folder as a **Resources Root folder**

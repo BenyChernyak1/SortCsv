@@ -1,7 +1,10 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Properties;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -10,13 +13,17 @@ public class SortCsv {
 
     public static void main(String[] args) {
         FileOperations fileOperations = new FileOperations();
-        String path = "resources/data.csv";
         String outputPath = "output";
-        int columnNumber = 2;
-        int maxLinesNumber = 5;
 
         try {
             Files.createDirectories(Paths.get(outputPath));
+
+            Properties properties = new Properties();
+            properties.load(SortCsv.class.getClassLoader().getResourceAsStream("config.properties"));
+
+            String path = properties.getProperty("path");
+            int columnNumber = Integer.parseInt(properties.getProperty("columnNumber"));
+            int maxLinesNumber = Integer.parseInt(properties.getProperty("maxLinesNumber"));
 
             String header = Files.lines(Paths.get(path))
                     .limit(1)

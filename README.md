@@ -18,3 +18,9 @@ Sorts efficiently the csv file based on one of its columns
 * Put any .csv file into the *resources* folder or use the pre-defined data.csv file
 * Run the application
 * Find the sorted file at *output* folder
+
+## Configuration
+You can change the following in *configuration.properties* file in *resourse* folder:
+* The path for the initial CSV file
+* Column number to perform the sort operation
+* Maximum number of lines in memory

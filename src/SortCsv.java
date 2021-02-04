@@ -38,10 +38,7 @@ public class SortCsv {
     }
 
     private static void mergeToFiles(FileOperations fileOperations, String outputPath, int columnNumber, String header) throws IOException {
-        List<String> filesToMerge = Files.walk(Paths.get(outputPath))
-                .filter(p -> Files.isRegularFile(p) && p.getFileName().toString().endsWith(".csv"))
-                .map(p -> p.getFileName().toString())
-                .collect(Collectors.toList());
+        List<String> filesToMerge = collectFilesToMerge(outputPath);
 
         while(filesToMerge.size() > 1) {
             String file1 = outputPath + File.separator + filesToMerge.get(0);
@@ -55,11 +52,15 @@ public class SortCsv {
             Files.delete(Paths.get(file1));
             Files.delete(Paths.get(file2));
 
-            filesToMerge = Files.walk(Paths.get(outputPath))
-                    .filter(p -> Files.isRegularFile(p) && p.getFileName().toString().endsWith(".csv"))
-                    .map(p -> p.getFileName().toString())
-                    .collect(Collectors.toList());
+            filesToMerge = collectFilesToMerge(outputPath);
         }
+    }
+
+    private static List<String> collectFilesToMerge(String outputPath) throws IOException {
+        return Files.walk(Paths.get(outputPath))
+                .filter(p -> Files.isRegularFile(p) && p.getFileName().toString().endsWith(".csv"))
+                .map(p -> p.getFileName().toString())
+                .collect(Collectors.toList());
     }
 
     private static void writeToFiles(FileOperations fileOperations, String path, int columnNumber, int maxLinesNumber) throws Exception {

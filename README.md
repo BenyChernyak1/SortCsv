@@ -15,7 +15,8 @@ Sorts efficiently the csv file based on one of its columns
 	c. max number of lines in memory
 
 ## Importent
-Please set up a a *scr* folder as a **Sources Root folde** and *resources* folder as a **Resources Root folder**
+* Please set up a a *scr* folder as a **Sources Root folde** and *resources* folder as a **Resources Root folder**
+* Before the next run either delete or empty *output* folder
 
 ## How to run
 * Put any .csv file into the *resources* folder or use the pre-defined data.csv file

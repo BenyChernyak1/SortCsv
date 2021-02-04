@@ -26,4 +26,4 @@ You can change the following in *configuration.properties* file in *resourse* fo
 * Maximum number of lines in memory
 
 ## Importent
-Please set up a resources folder as a "Resources Root folder"
+Please set up a a *scr* folder as a **Sources Root folde** and *resources* folder as a **Resources Root folder**

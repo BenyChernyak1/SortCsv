@@ -24,3 +24,6 @@ You can change the following in *configuration.properties* file in *resourse* fo
 * The path for the initial CSV file
 * Column number to perform the sort operation
 * Maximum number of lines in memory
+
+## Importent
+Please set up a resources folder as a "Resources Root folder"
